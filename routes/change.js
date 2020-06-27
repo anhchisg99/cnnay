@@ -1,0 +1,30 @@
+// const express = require('express');
+
+// const router = express.Router();
+//  const { ensureAuthenticated, forwardAuthenticated } = require('../config/auth');
+
+// // Welcome Page
+// router.get('/', forwardAuthenticated, (req, res) => res.render('welcome'));
+
+// // Dashboard
+// router.get('/dashboard', ensureAuthenticated,(req, res) =>
+//   res.render('dashboard', {
+//     user: req.user
+//   })
+// );
+// router.get('/change/:id',(req,res)=>{
+//     Product.findByIdAndRemove({_id:req.params.id}).then((kq)=>{
+//         console.log(kq);
+//         res.redirect('/users/change');
+//     })
+    
+    
+// });
+// router.get('/change',(req,res)=>{
+//     Product.find().then(kq=>{
+//         res.render('change',{product1:kq})
+
+//     });
+    
+// })
+// module.exports = router;

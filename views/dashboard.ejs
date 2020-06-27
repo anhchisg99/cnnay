@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+  <h2>Tải sản phẩm</h2>
+  <form action="/api/posts" method="post" enctype="multipart/form-data">
+    <div class="form-group">
+      <label for="name">name product</label>
+      <input type="name" class="form-control" id="name" placeholder="Enter product" name="name">
+    </div>
+    <div class="form-group">
+            <label for="price">price product</label>
+            <input type="text" class="form-control" id="price" placeholder="Enter product" name="price">
+    </div>
+    <div class="form-group">
+                <label for="sdt">number</label>
+                <input type="text" class="form-control" id="sdt" placeholder="Enter product" name="sdt">
+    </div>
+    <div class="form-group">
+        <label for="exampleFormControlFile1">Example file input</label>
+        <input type="file" class="form-control-file" id="productimage" name="productimage">
+      </div>
+    
+    <button type="submit" class="btn btn-primary ">Submit</button>
+    <a href="/users/logout" class="btn btn-secondary float-right ml-5 "> Logout</a> 
+    <a href="/" class="btn btn-primary float-right  "> Trang Chủ</a> 
+  </form>
+
+</div>
+
+</body>
+</html>
