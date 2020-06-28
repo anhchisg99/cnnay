@@ -62,7 +62,7 @@ router.get("/", (req, res, next) => {
       //           message: 'No entries found'
       //       });
       //   }
-      res.redirect('/product');
+      //res.redirect('/product');
     })
     .catch(err => {
       console.log(err);
@@ -83,19 +83,27 @@ router.post("/", upload.single('productimage'), (req, res, next) => {
   product
     .save()
     .then(result => {
-      console.log(result);
-      res.status(201).json({
-        message: "Created product successfully",
-        createdProduct: {
-            name: result.name,
-            price: result.price,
-            _id: result._id,
-            request: {
-                type: 'GET',
-                url: "http://localhost:3000/products/" + result._id
-            }
-        }
-      });
+    //   console.log(result);
+    //   res.status(201).json({
+    //     message: "Created product successfully",
+    //     createdProduct: {
+    //         name: result.name,
+    //         price: result.price,
+    //         _id: result._id,
+    //         request: {
+    //             type: 'GET',
+    //             url: "http://localhost:3000/products/" + result._id
+    //         }
+    //     }
+        
+        
+    //   });
+    if(result){
+        res.redirect('/');
+    }else{
+        res.send(new Error());
+    }
+      
     })
     .catch(err => {
       console.log(err);
