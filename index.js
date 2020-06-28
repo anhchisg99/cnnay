@@ -4,6 +4,8 @@ const mongoose = require('mongoose');
 const passport = require('passport');
 const bodyParser  = require('body-parser');
 const session = require('express-session');
+
+
 const app = express();
 // Passport Config
 require('./config/passport')(passport);
@@ -34,6 +36,8 @@ app.use(
   app.use(passport.session());
   
   // Routes
+  const product = require('./routes/product');
+  app.use('/product',product);
 app.use('/check', require('./routes/index.js'));
 app.use('/users', require('./routes/users'));
 
