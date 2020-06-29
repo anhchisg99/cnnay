@@ -7,6 +7,7 @@ const session = require('express-session');
 const app = express();
 const swaggerJsDoc = require("swagger-jsdoc");
 const swaggerUi = require("swagger-ui-express");
+const MongoStore = require('connect-mongo')(session);
 // Passport Config
 require('./config/passport')(passport);
 //db
@@ -106,7 +107,8 @@ app.use(
     session({
       secret: 'secret',
       resave: true,
-      saveUninitialized: true
+      saveUninitialized: true,
+      store : new MongoStore({ mongooseConnection: mongoose.connection,ttl:  24 * 60 * 60 })
     })
   );
   // Passport middleware
