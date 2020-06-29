@@ -11,20 +11,7 @@ const { ensureAuthenticated,forwardAuthenticated,xinxoAuthenticated } = require(
 router.get('/register',forwardAuthenticated,(req,res)=>{
     res.render('register');
 })
-router.get('/rko',forwardAuthenticated,(req,res)=>{
-    res.render('rko');
-    
-})
-router.post('/rko',forwardAuthenticated,(req,res)=>{
 
-    var users = new User({
-        name : req.body.name,
-     
-    })
-    users.save().then(kq =>console.log(kq));
-    res.send('thanhcong');
-    
-})
 // Register
 router.post('/register', (req, res) => {
     const  name  = req.body.name;
