@@ -11,9 +11,11 @@ const app = express();
 require('./config/passport')(passport);
 //db
 
+
 const Product = require('./models/Products');
-//mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/batdaulai',{useNewUrlParser: true, useUnifiedTopology: true});
-mongoose.connect('mongodb://localhost:27017/batdaulai', {useNewUrlParser: true, useUnifiedTopology: true});
+//mongodb+srv://chi_duong:<haivlk123>@tm-wc4xv.mongodb.net/<batdaulai>?retryWrites=true&w=majority
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/batdaulai',{useNewUrlParser: true, useUnifiedTopology: true});
+//mongoose.connect('mongodb://localhost:27017/batdaulai', {useNewUrlParser: true, useUnifiedTopology: true});
 
 //ejs
 app.set('views','./views');
